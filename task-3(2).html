@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function myfuc(){
+        var xmlHTTP= new XMLHttpRequest();
+        xmlHTTP.open('GET','https://restcountries.com/v3.1/all', true);
+        xmlHTTP.send();
+        xmlHTTP.onreadystatechange=function(){
+            xmlHTTP.responseText = "[{key: 'value'}, {key: 'value'}]"
+            const outputObj = JSON.parse(xmlHTTP.responseText);
+            outputObj.forEach((function) => {
+                console.log(country.flags);
+                console.log(country.names);
+                console.log(country.regions);
+                console.log(country.sub-region);
+                console.log(country.polpulations);
+            })
+        }
+    }
+</script>
+<body>
+    <h1>"HELLO WORLD"</h1>
+</body>
+</html>
